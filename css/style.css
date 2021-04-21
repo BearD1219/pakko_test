@@ -1,0 +1,276 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #100A30;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1232px;
+  margin: 0 auto;
+  padding: 33px 0;
+}
+
+.nav {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+.nav__item {
+  margin-left: 44px;
+}
+
+.nav__item:first-child {
+  margin-left: 0;
+}
+
+.nav__item:last-child {
+  margin-left: 28px;
+}
+
+.nav__link {
+  transition: color .4s;
+}
+
+.nav__btn {
+  font-size: 14px;
+  color: #fff;
+  background-color: #624DE3;
+  padding: 15px 26px;
+  border-radius: 6px;
+  transition: background-color .4s;
+}
+
+.nav.hover .nav__link:hover {
+  color: #624DE3;
+}
+
+.nav.hover .nav__btn:hover {
+  background-color: #100A30;
+}
+
+.banner {
+  background-color: #100A30;
+  color: #fff;
+  text-align: center;
+  padding: 64px 0 757px 0;
+  position: relative;
+}
+
+.banner__title {
+  font-size: 55px;
+  font-weight: 400;
+  max-width: 580px;
+  margin: 0 auto 32px auto;
+}
+
+.banner__text {
+  opacity: .7;
+  margin-bottom: 54px;
+}
+
+.banner__img {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -171px;
+}
+
+.container {
+  max-width: 1232px;
+  margin: 0 auto;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-group__btn {
+  padding: 17px 37px;
+  border: 1px solid #fff;
+  border-radius: 8px;
+  margin: 0 8px;
+  transition: background-color .4s, color .4s, border-color .4s;
+}
+
+.btn-group__btn--1 {
+  font-size: 15px;
+  background-color: #624DE3;
+  border: none;
+  border-radius: 6px;
+  padding: 19px 39px;
+}
+
+.btn-group.hover .btn-group__btn--1:hover {
+  background-color: #614de375;
+}
+
+.btn-group.hover .btn-group__btn--2:hover {
+  color: #624DE3;
+  border-color: #624DE3;
+}
+
+.tarifs {
+  padding: 216px 0 86px 0;
+}
+
+.tarifs__title {
+  text-align: center;
+  max-width: 591px;
+  margin: 0 auto 59px auto;
+}
+
+.title {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 -12px;
+}
+
+.cards__item {
+  flex: 0 0 33.3%;
+  padding: 0 12px;
+}
+
+.cards__item--01 .cards__header {
+  background: url(../img/tarif_bg_1.png) 0 0/cover no-repeat;
+}
+
+.cards__item--01 .cards__footer {
+  background-color: #F7F7F8;
+}
+
+.cards__item--01 .cards__list__item::before {
+  content: url(../img/check_1.svg);
+}
+
+.cards__item--02 .cards__header {
+  background: url(../img/tarif_bg_2.png) 0 0/cover no-repeat;
+}
+
+.cards__item--02 .cards__title {
+  color: #19C787;
+}
+
+.cards__item--02 .cards__footer {
+  background-color: #F3FCF9;
+}
+
+.cards__item--02 .cards__list__item::before {
+  content: url(../img/check_2.svg);
+}
+
+.cards__item--03 .cards__header {
+  background: url(../img/tarif_bg_3.png) 0 0/cover no-repeat;
+}
+
+.cards__item--03 .cards__title {
+  color: #FCB935;
+}
+
+.cards__item--03 .cards__footer {
+  background-color: #FFFBF5;
+}
+
+.cards__item--03 .cards__list__item::before {
+  content: url(../img/check_3.svg);
+}
+
+.cards__header {
+  padding-top: 119px;
+  border-radius: 8px 8px 0 0;
+}
+
+.cards__info {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 33px 37px 35px 30px;
+  background-color: #100A30;
+  color: #fff;
+  position: relative;
+}
+
+.cards__info::before {
+  content: url(../img/tarif_item3.svg);
+  position: absolute;
+  top: -45px;
+  left: 0;
+}
+
+.cards__title {
+  font-size: 24px;
+  font-weight: 400;
+  position: relative;
+  padding-top: 34px;
+}
+
+.cards__title::before {
+  content: url(../img/logo_mini.svg);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.cards__price {
+  font-size: 48px;
+}
+
+.cards__price span {
+  font-size: 15px;
+}
+
+.cards__footer {
+  border-radius: 0 0 8px 8px;
+}
+
+.cards__list {
+  list-style: none;
+  padding: 29px 24px 27px 24px;
+}
+
+.cards__list__item {
+  font-size: 14px;
+  font-weight: 700;
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 22px;
+}
+
+.cards__list__item:last-child {
+  margin-bottom: 0;
+}
+
+.cards__list__item::before {
+  position: absolute;
+  top: -4px;
+  left: 3px;
+}
