@@ -122,7 +122,7 @@ a {
 }
 
 .tarifs {
-    padding: 216px 0 86px 0;
+    padding: 216px 0 110px 0;
     &__title {
         text-align: center;
         max-width: 591px;
@@ -134,13 +134,14 @@ a {
     font-size: 48px;
     font-weight: 700;
 }
+
 .cards {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     margin: 0 -12px;
     &__item {
-        flex: 0 0 33.3%;
+        flex: 0 0 33.37%;
         padding: 0 12px;
         &--01 {
             .cards__header {
@@ -159,11 +160,6 @@ a {
             .cards__header {
                 background: url(../img/tarif_bg_2.png) 0 0/cover no-repeat;
             }
-            // .cards__info {
-            //     &::before {
-            //         left: 1px;
-            //     }
-            // }
             .cards__title {
                 color: $priceName2;
             }
@@ -206,7 +202,7 @@ a {
         color: $white;
         position: relative;
         &::before {
-            content: url(../img/tarif_item3.svg);
+            content: url(../img/tarif_item.svg);
             position: absolute;
             top: -45px;
             left: 0;
@@ -251,5 +247,82 @@ a {
                 left: 3px;
             }
         }
+    }
+}
+
+.reviews {
+    padding: 110px 0 121px 0;
+    &__wrap {
+        display: flex;
+        margin: 0 -20px;
+    }
+    &__block {
+        flex: 1 1 50%;
+        padding: 0 20px;
+        &__title {
+            padding: 40px 0;
+            margin-bottom: 40px;
+        }
+    }
+    &__item {
+        margin-bottom: 40px;
+        padding: 40px;
+        border-radius: 8px;
+        &--01 {
+            background-color: $reviews1;
+        }
+        &--02 {
+            background-color: $reviews2;
+        }
+        &--03{
+            background-color: $reviews3;
+        }
+        &--04 {
+            background-color: $reviews4;
+        }
+        &--05 {
+            background-color: $reviews5;
+        }
+        &__header {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 36px;
+        }
+    }
+    &__avatar {
+        border-radius: 50%;
+        flex: 0 0 48px;
+        margin-right: 16px;
+    }
+    &__user {
+        flex: 1 1 100%;
+    }
+    &__name {
+        font-weight: 700;
+        margin-bottom: 5px;
+    }
+    &__nick {
+        font-size: 15px;
+        color: $grey;
+    }
+    &__social {
+        flex: 0 0 24px;
+        width: 24px;
+        height: 24px;
+        &.twitter {
+            background: url('../img/twitter.svg') 0 0/cover no-repeat;
+        }
+        &.message {
+            background: url('../img/message.svg') 0 0/cover no-repeat;
+        }
+    }
+    &__text {
+        font-size: 17px;
+        color: $grey;
+        line-height: 30px;
+    }
+    &__post {
+        font-weight: 700;
+        margin-top: 20px;
     }
 }
