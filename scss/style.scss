@@ -24,6 +24,10 @@ a {
     color: inherit;
 }
 
+header {
+    padding: 0 10px;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
@@ -71,6 +75,15 @@ a {
     text-align: center;
     padding: 64px 0 757px 0;
     position: relative;
+    &.container {
+
+    }
+    @media (max-width: 1206px) {
+        padding-bottom: 62%;
+    }
+    @media (max-width: 1000px) {
+        padding-bottom: 57%;
+    }
     &__title {
         font-size: 55px;
         font-weight: 400;
@@ -86,6 +99,13 @@ a {
         left: 50%;
         transform: translateX(-50%);
         bottom: -171px;
+        max-width: 100%;
+        @media (max-width: 1206px) {
+            bottom: -16%;
+        }
+        @media (max-width: 1000px) {
+            bottom: -14%;
+        }
     }
 }
 
@@ -122,7 +142,11 @@ a {
 }
 
 .tarifs {
-    padding: 216px 0 110px 0;
+    padding: 216px 10px 110px 10px;
+    @media (max-width: 1000px) {
+        padding-top: 10%;
+        padding-bottom: 50px;
+    }
     &__title {
         text-align: center;
         max-width: 591px;
@@ -133,16 +157,20 @@ a {
 .title {
     font-size: 48px;
     font-weight: 700;
+    @media (max-width: 1000px) {
+        font-size: 40px;
+    }
 }
 
 .cards {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin: 0 -12px;
+    // margin: 0 -12px;
     &__item {
-        flex: 0 0 33.37%;
-        padding: 0 12px;
+        width: calc(1/3*100% - (1 - 1/3)*24px);
+        // flex: 1 1 33.37%;
+        // padding: 0 12px;
         &--01 {
             .cards__header {
                 background: url(../img/tarif_bg_1.png) 0 0/cover no-repeat;
@@ -188,10 +216,17 @@ a {
                 }
             }
         }
+        &.hover:hover .cards__header {
+            box-shadow: 0 0 20px rgba(#000, .5);
+        }
+        &.hover:hover .cards__footer {
+            box-shadow: 0 0 20px rgba(#000, .5);
+        }
     }
     &__header {
         padding-top: 119px;
         border-radius: 8px 8px 0 0;
+        transition: box-shadow .4s;
     }
     &__info {
         display: flex;
@@ -202,7 +237,10 @@ a {
         color: $white;
         position: relative;
         &::before {
-            content: url(../img/tarif_item.svg);
+            content: '';
+            width: 100%;
+            height: 48px;
+            background: url('../img/tarif_item5.svg')0 0 no-repeat;
             position: absolute;
             top: -45px;
             left: 0;
@@ -228,6 +266,7 @@ a {
     }
     &__footer {
         border-radius: 0 0 8px 8px;
+        transition: box-shadow .4s;
     };
     &__list {
         list-style: none;
@@ -251,37 +290,55 @@ a {
 }
 
 .reviews {
-    padding: 110px 0 121px 0;
+    padding: 97px 10px 85px 10px;
+    @media (max-width: 1000px) {
+        padding-top: 70px;
+    }
     &__wrap {
         display: flex;
-        margin: 0 -20px;
+        justify-content: space-between;
+        // margin: 0 -20px;
     }
     &__block {
-        flex: 1 1 50%;
-        padding: 0 20px;
+        // flex: 1 1 50%;
+        // padding: 0 20px;
+        width: calc(1/2*100% - (1 - 1/2)*40px);
+        & .reviews__item:last-child {
+            padding-bottom: 38px;
+        }
         &__title {
-            padding: 40px 0;
-            margin-bottom: 40px;
+            padding: 28px 0 40px 0;
+            margin-bottom: 43px;
         }
     }
     &__item {
-        margin-bottom: 40px;
-        padding: 40px;
+        margin-bottom: 37px;
+        padding: 42px 40px 28px 41px;
         border-radius: 8px;
         &--01 {
             background-color: $reviews1;
+            .reviews__text {
+                font-size: 17px;
+            }
         }
         &--02 {
             background-color: $reviews2;
+            .reviews__text {
+                font-size: 18px;
+            }
         }
         &--03{
             background-color: $reviews3;
+            border-radius: 0 0 8px 8px;
         }
         &--04 {
             background-color: $reviews4;
         }
         &--05 {
             background-color: $reviews5;
+            .reviews__text {
+                font-size: 18px;
+            }
         }
         &__header {
             display: flex;
@@ -323,6 +380,68 @@ a {
     }
     &__post {
         font-weight: 700;
-        margin-top: 20px;
+        margin-top: 34px;
+    }
+}
+
+.footer {
+    background-color: $footerBg;
+    padding: 55px 10px 57px 10px;
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        // margin: 0 -65px;
+    }
+    &__item {
+        // flex: 1 1 25%;
+        // padding: 0 65px;
+        width: calc(1/4*100% - (1 - 1/4)*130px);
+        color: $grey;
+    }
+    &__logo {
+        margin-bottom: 24px;
+    }
+    &__text {
+        margin-bottom: 24px;
+        line-height: 30px;
+    }
+    &__social {
+        &__link {
+            display: inline-block;
+            margin-right: 20px;
+            transition: filter .4s;
+            img {
+                width: 100%;
+                height: 100%;
+                display: block;
+                object-fit: cover;
+            }
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+        &.hover &__link:hover {
+            filter: opacity(.5);
+        }
+    }
+    &__list {
+        list-style: none;
+        font-size: 15px;
+        padding-left: 4px;
+        &__item {
+            margin-bottom: 13px;
+            &:first-child {
+                padding-top: 4px;
+                font-size: 16px;
+                font-weight: 700;
+                margin-bottom: 18px;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+        &.hover &__link:hover {
+            text-decoration: underline;        }
     }
 }
