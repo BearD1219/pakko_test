@@ -38,44 +38,54 @@
     <section class="tarifs">
         <div class="container">
             <h2 class="tarifs__title title">Des tarifs qui s'adaptent à votre activité !</h2>
-            <div class="cards">
-                <div class="cards__item cards__item--01 hover" data-hover>
+            <div class="cards cards__top">
+                <div class="cards__item cards__item--01" id="card_1" data-card="card_11">
                     <div class="cards__header">
                         <div class="cards__info">
                             <h3 class="cards__title">Gratuit</h3>
                             <p class="cards__price"></p>
                         </div>
                     </div>
-                    <div class="cards__footer">
-                        <ul class="cards__list">
-                            <li class="cards__list__item">Gratuit</li>
-                            <li class="cards__list__item">Jusqu'à 4 clients</li>
-                            <li class="cards__list__item">Chiffre d'affaires jusqu'à 5 000€</li>
-                        </ul>
-                    </div>
                 </div>
-                <div class="cards__item cards__item--02 hover" data-hover>
+                <div class="cards__item cards__item--02" id="card_2" data-card="card_22">
                     <div class="cards__header">
                         <div class="cards__info">
                             <h3 class="cards__title">Basique</h3>
                             <p class="cards__price">5€ <span>/mois</span></p>
                         </div>
                     </div>
-                    <div class="cards__footer">
-                        <ul class="cards__list">
-                            <li class="cards__list__item">30 jours d'essai gratuits</li>
-                            <li class="cards__list__item">Clients illimités</li>
-                            <li class="cards__list__item">Chiffre d'affaires jusqu'à 30 000€</li>
-                        </ul>
-                    </div>
                 </div>
-                <div class="cards__item cards__item--03 hover" data-hover>
+                <div class="cards__item cards__item--03" id="card_3" data-card="card_33">
                     <div class="cards__header">
                         <div class="cards__info">
                             <h3 class="cards__title">Pro</h3>
                             <p class="cards__price">12€ <span>/mois</span></p>
                         </div>
                     </div>
+                </div>
+            </div>
+
+
+            <div class="cards cards__bottom">
+                <div class="cards__item cards__item--01" id="card_11" data-card="card_1">
+                    <div class="cards__footer" id="footer1">
+                        <ul class="cards__list">
+                            <li class="cards__list__item">Gratuit</li>
+                            <li class="cards__list__item">Jusqu'à 4 clients</li>
+                            <li class="cards__list__item">Chiffre d'affaires jusqu'à 5&nbsp;000€</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cards__item cards__item--02" id="card_22" data-card="card_2">
+                    <div class="cards__footer">
+                        <ul class="cards__list">
+                            <li class="cards__list__item">30 jours d'essai gratuits</li>
+                            <li class="cards__list__item">Clients illimités</li>
+                            <li class="cards__list__item">Chiffre d'affaires jusqu'à 30&nbsp;000€</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cards__item cards__item--03" id="card_33" data-card="card_3">
                     <div class="cards__footer">
                         <ul class="cards__list">
                             <li class="cards__list__item">30 jours d'essai gratuits</li>
@@ -175,7 +185,7 @@
                 <div class="footer__wrap">
                     <div class="footer__item">
                         <img src="img/logo.svg" alt="logo" class="footer__logo">
-                        <p class="footer__text">Gagnez du temps, faites&nbsp;ce&nbsp;que vous aimez !</p>
+                        <p class="footer__text">Gagnez du temps, faites&nbsp;ce&nbsp;que vous aimez&nbsp;!</p>
                         <div class="footer__social hover" data-hover>
                             <a href="#" class="footer__social__link"><img src="img/social/facebook.svg" alt="facebook"></a>
                             <a href="#" class="footer__social__link"><img src="img/social/instagram.svg" alt="instagram.svg"></a>
@@ -212,5 +222,6 @@
             </div>
         </div>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>
