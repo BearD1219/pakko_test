@@ -13,21 +13,24 @@
 <body>
     <header>
         <div class="header">
-            <img src="img/logo.svg" alt="logo" class="header__logo">
+            <img src="img/logo.svg" alt="logo" class="header__logo" data-link="top">
             <nav>
                 <ul class="nav hover" data-hover>
-                    <li class="nav__item"><a href="#" class="nav__link">Tarifs</a></li>
+                    <li class="nav__item"><a href="#" class="nav__link" data-link="#tarifs">Tarifs</a></li>
                     <li class="nav__item"><a href="#" class="nav__link">App iOS</a></li>
                     <li class="nav__item"><a href="#" class="nav__link">Me connecter</a></li>
                     <li class="nav__item"><a href="#" class="nav__btn">S'inscrire</a></li>
                 </ul>
             </nav>
+            <div class="mobile-menu">
+                <span></span>
+            </div>
         </div>
     </header>
     <section class="banner">
         <div class="container">
             <h1 class="banner__title">Devis, factures, suivi, plafonds, cotisations</h1>
-            <p class="banner__text">Pakko accompagne les micro-entrepreneurs et leur fait gagner du temps !</p>
+            <p class="banner__text">Pakko accompagne les micro-entrepreneurs et leur fait gagner du temps&nbsp;!</p>
             <div class="btn-group hover" data-hover>
                 <a href="#" class="btn-group__btn btn-group__btn--1">Créer mon compte</a>
                 <a href="#" class="btn-group__btn btn-group__btn--2">Voir la vidéo</a>
@@ -35,9 +38,9 @@
             <img src="img/banner.png" alt="banner" class="banner__img">
         </div>
     </section>
-    <section class="tarifs">
+    <section class="tarifs" id="tarifs">
         <div class="container">
-            <h2 class="tarifs__title title">Des tarifs qui s'adaptent à votre activité !</h2>
+            <h2 class="tarifs__title title">Des tarifs qui s'adaptent à votre activité&nbsp;!</h2>
             <div class="cards cards__top">
                 <div class="cards__item cards__item--01" id="card_1" data-card="card_11">
                     <div class="cards__header">
@@ -45,6 +48,13 @@
                             <h3 class="cards__title">Gratuit</h3>
                             <p class="cards__price"></p>
                         </div>
+                    </div>
+                    <div class="cards__footer cards__footer--mobile">
+                        <ul class="cards__list">
+                            <li class="cards__list__item">Gratuit</li>
+                            <li class="cards__list__item">Jusqu'à 4 clients</li>
+                            <li class="cards__list__item">Chiffre d'affaires jusqu'à 5&nbsp;000€</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="cards__item cards__item--02" id="card_2" data-card="card_22">
@@ -54,6 +64,13 @@
                             <p class="cards__price">5€ <span>/mois</span></p>
                         </div>
                     </div>
+                    <div class="cards__footer cards__footer--mobile">
+                        <ul class="cards__list">
+                            <li class="cards__list__item">30 jours d'essai gratuits</li>
+                            <li class="cards__list__item">Clients illimités</li>
+                            <li class="cards__list__item">Chiffre d'affaires jusqu'à 30&nbsp;000€</li>
+                        </ul>
+                    </div>
                 </div>
                 <div class="cards__item cards__item--03" id="card_3" data-card="card_33">
                     <div class="cards__header">
@@ -62,13 +79,20 @@
                             <p class="cards__price">12€ <span>/mois</span></p>
                         </div>
                     </div>
+                    <div class="cards__footer cards__footer--mobile">
+                        <ul class="cards__list">
+                            <li class="cards__list__item">30 jours d'essai gratuits</li>
+                            <li class="cards__list__item">Clients illimités</li>
+                            <li class="cards__list__item">Chiffre d'affaires illimité</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
 
 
             <div class="cards cards__bottom">
                 <div class="cards__item cards__item--01" id="card_11" data-card="card_1">
-                    <div class="cards__footer" id="footer1">
+                    <div class="cards__footer">
                         <ul class="cards__list">
                             <li class="cards__list__item">Gratuit</li>
                             <li class="cards__list__item">Jusqu'à 4 clients</li>

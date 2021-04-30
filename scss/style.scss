@@ -17,6 +17,24 @@ body {
     font-size: 16px;
     font-weight: 400;
     color: $dark;
+    @media (max-width: 768px) {
+        font-size: 14px;
+    }
+    @media (max-width: 412px) {
+        font-size: 12px;;
+    }
+    &.scroll {
+        padding-top: 90px;
+        @media (max-width: 768px) {
+            padding-top: 61px;
+        }
+        @media (max-width: 412px) {
+            padding-top: 41px;
+        }
+    }
+    &.active {
+        overflow: hidden;
+    }
 }
 
 a {
@@ -32,7 +50,7 @@ header {
         position: fixed;
         top: -100%;
         left: 0;
-        z-index: 2;
+        z-index: 10;
         width: 100%;
         background-color: rgba($white, .9);
         animation: showHeader .5s ease-out forwards;
@@ -56,6 +74,15 @@ header {
     max-width: 1232px;
     margin: 0 auto;
     padding: 33px 0;
+    &__logo {
+        cursor: pointer;
+    }
+    @media (max-width: 768px) {
+        padding: 18px 0;
+    }
+    @media (max-width: 412px) {
+        padding: 8px 0;
+    }
 }
 
 .nav {
@@ -88,6 +115,119 @@ header {
     &.hover &__btn:hover {
         background-color: $dark;
     }
+    @media (max-width: 768px) {
+        position: fixed;
+        flex-direction: column;
+        top: 61px;
+        right: -100vw;
+        width: 50%;
+        height: 100%;
+        background-color: rgba($light, .9);
+        padding: 50px 0 100px 0;
+        z-index: 2;
+        transition: right .6s ease-in-out;
+        overflow: auto;
+        @media (max-width: 412px) {
+            top: 41px;
+        }
+        &__item {
+            margin: 0;
+            width: 100%;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            color: $white;
+            &:last-child {
+                margin-left: 0;
+            }
+            @media (max-width: 650px) {
+                font-size: 16px;
+            }
+        }
+        &__link {
+            display: block;
+            padding: 20px 0;
+        }
+        &__btn {
+            font-size: 20px;
+            display: block;
+            background-color: initial;
+            border-radius: 0;
+            transition: 0;
+            padding: 20px 0;
+            @media (max-width: 650px) {
+                font-size: 16px;
+            }
+        }
+        &.active {
+            right: 0;
+            transition: right .6s ease-in-out;
+        }
+    }
+}
+
+.mobile-menu {
+    display: none;
+    @media (max-width: 768px) {
+        display: block;
+        position: relative;
+        width: 30px;
+        height: 25px;
+        @media (max-width: 412px) {
+            width: 25px;
+            height: 20px;
+        }
+        & span {
+            display: block;
+            width: 100%;
+            height: 4px;
+            background-color: $dark;
+            border-radius: 5px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: opacity  0s .3s;
+            @media (max-width: 412px) {
+                height: 3px;
+            }
+        }
+        &::before, &::after {
+            content: '';
+            width: 100%;
+            height: 4px;
+            background-color: $dark;
+            border-radius: 5px;
+            position: absolute;
+            left: 0;
+            @media (max-width: 412px) {
+                height: 3px;
+            }
+        }
+        &::before {
+            top: 0;
+            transition: top .3s .3s, transform .3s;
+        }
+        &::after {
+            bottom: 0;
+            transition: bottom .3s .3s, transform .3s;
+        }
+        &.close {
+            span {
+                opacity: 0;
+                transition: opacity .3s;
+            }
+            &::before {
+                top: 50%;
+                transform: translateY(-50%) rotate(45deg);
+                transition: top .3s, transform .3s .3s;
+            }
+            &::after {
+                bottom: 50%;
+                transform: translateY(50%) rotate(-45deg);
+                transition: bottom .3s, transform .3s .3s;
+            }
+        }
+    }
 }
 
 .banner {
@@ -102,15 +242,34 @@ header {
     @media (max-width: 1000px) {
         padding-bottom: 59%;
     }
+    @media (max-width: 768px) {
+        padding-top: 30px;
+        padding-bottom: 45%;
+    }
+    @media (max-width: 600px) {
+        padding: 30px 10px;
+    }
     &__title {
         font-size: 55px;
         font-weight: 400;
         max-width: 580px;
         margin: 0 auto 32px auto;
+        @media (max-width: 768px) {
+            font-size: 48px;
+        }
+        @media (max-width: 600px) {
+            font-size: 39px;
+        }
+        @media (max-width: 412px) {
+            font-size: 30px;;
+        }
     }
     &__text {
         opacity: .7;
         margin-bottom: 54px;
+        @media (max-width: 768px) {
+            margin-bottom: 34px;
+        }
     }
     &__img {
         position: absolute;
@@ -125,9 +284,12 @@ header {
         @media (max-width: 1000px) {
             bottom: -14%;
         }
-    }
-    &.scroll {
-        padding-bottom: 848px;
+        @media (max-width: 768px) {
+            max-width: 80%;
+        }
+        @media (max-width: 600px) {
+            display: none;
+        }
     }
 }
 
@@ -154,6 +316,20 @@ header {
             border-radius: 6px;
             padding: 19px 39px;
         }
+        @media (max-width: 768px) {
+            padding: 12px 27px;
+            &--1 {
+                font-size: 14px;
+                padding: 14px 29px;
+            }
+        }
+        @media (max-width: 412px) {
+            padding: 8px 27px;
+            &--1 {
+                font-size: 12px;
+                padding: 10px 22px;
+            }
+        }
     }
     &.hover &__btn--1:hover {
         background-color: $light_opacity;
@@ -166,14 +342,28 @@ header {
 
 .tarifs {
     padding: 216px 10px 110px 10px;
+    @media (max-width: 1206px) {
+        padding-top: 140px;
+        padding-bottom: 50px;
+    }
     @media (max-width: 1000px) {
         padding-top: 10%;
         padding-bottom: 40px;
+    }
+    @media (max-width: 768px) {
+        padding-top: 6%;
+        padding-bottom: 30px;
+    }
+    @media (max-width: 500px) {
+        padding-bottom: 20px;
     }
     &__title {
         text-align: center;
         max-width: 591px;
         margin: 0 auto 59px auto;
+        @media (max-width: 768px) {
+            margin-bottom: 40px;
+        }
     }
 }
 
@@ -183,18 +373,35 @@ header {
     @media (max-width: 1000px) {
         font-size: 40px;
     }
+    @media (max-width: 768px) {
+        font-size: 32px;
+    }
+    @media (max-width: 412px) {
+        font-size: 26px;
+    }
 }
 
 .cards {
     display: flex;
     justify-content: space-between;
-    // align-items: flex-start;
-    // margin: 0 -12px;
+    @media (max-width: 650px) {
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
     &__item {
         width: calc(1/3*100% - (1 - 1/3)*24px);
         display: flex;
-        // flex: 1 1 33.37%;
-        // padding: 0 12px;
+        @media (max-width: 1000px) {
+            width: calc(1/3*100% - (1 - 1/3)*12px);
+        }
+        @media (max-width: 650px) {
+            width: auto;
+            flex-direction: column;
+            margin-bottom: 20px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
         &--01 {
             .cards__header {
                 background: url(../img/tarif_bg_1.png) 0 0/cover no-repeat;
@@ -252,19 +459,6 @@ header {
         &.card_hover .cards__header, &.card_hover .cards__footer {
             box-shadow: 0 0 20px rgba(#000, .5);
         }
-        // &.card_hover:hover .cards__footer {
-        //     box-shadow: 0 0 20px rgba(#000, .5);
-        // }
-        // &.hover:hover .cards__header {
-        //     transform: scale(1.05);
-        // }
-        // &.hover:hover .cards__footer {
-        //     transform: scale(1.05);
-        //     box-shadow: 0 0 20px rgba(#000, .5);
-        // }
-        @media (max-width: 1000px) {
-            width: calc(1/3*100% - (1 - 1/3)*12px);
-        }
     }
     &__header {
         padding-top: 119px;
@@ -272,6 +466,9 @@ header {
         flex: 1 1 auto;
         display: flex;
         transition: box-shadow .4s;
+        @media (max-width: 650px) {
+            overflow: hidden;
+        }
     }
     &__info {
         flex: 1 1 auto;
@@ -290,15 +487,18 @@ header {
             position: absolute;
             top: -45px;
             left: 0;
+            @media (max-width: 650px) {
+                background-size: cover;
+                left: -20%;
+                width: 122%;
+            }
         }
         @media (max-width: 1000px) {
             padding: 33px 5px 20px 5px;
         }
-        // @media (max-width: 900px) {
-        //     flex-direction: column;
-        //     align-items: initial;
-        //     justify-content: initial;
-        // }
+        @media (max-width: 768px) {
+            padding: 0 5px 5px 5px;
+        }
     }
     &__title {
         font-size: 24px;
@@ -320,15 +520,32 @@ header {
         @media (max-width: 1000px) {
             font-size: 45px;
         }
+        @media (max-width: 768px) {
+            font-size: 32px;
+        }
     }
     &__footer {
         border-radius: 0 0 8px 8px;
         transition: box-shadow .4s;
         flex: 1 1 auto;
+        &--mobile {
+            display: none;
+        }
+        @media (max-width: 650px) {
+            &--mobile {
+                display: block;
+            }
+        }
     };
     &__list {
         list-style: none;
         padding: 29px 24px 27px 24px;
+        @media (max-width: 768px) {
+            padding: 20px 5px;
+        }
+        @media (max-width: 500px) {
+            padding: 10px 5px;
+        }
         &__item {
             font-size: 14px;
             font-weight: 700;
@@ -343,8 +560,20 @@ header {
                 top: -4px;
                 left: 3px;
             }
+            @media (max-width: 500px) {
+                margin-bottom: 10px;
+            }
+            @media (max-width: 412px) {
+                font-size: 12px;
+            }
         }
     }
+    &__bottom {
+        @media (max-width: 650px) {
+            display: none;
+        }
+    }
+
 }
 
 .reviews {
@@ -352,40 +581,77 @@ header {
     @media (max-width: 1000px) {
         padding: 40px 10px;
     }
+    @media (max-width: 768px) {
+        padding: 30px 10px;
+    }
+    @media (max-width: 500px) {
+        padding: 20px 10px;
+    }
     &__wrap {
         display: flex;
         justify-content: space-between;
-        // margin: 0 -20px;
+        @media (max-width: 500px) {
+            flex-direction: column;
+        }
     }
     &__block {
-        // flex: 1 1 50%;
-        // padding: 0 20px;
         width: calc(1/2*100% - (1 - 1/2)*40px);
+        @media (max-width:1000px) {
+            width: calc(1/2*100% - (1 - 1/2)*20px);
+        }
+        @media (max-width: 500px) {
+            width: 100%;
+        }
         & .reviews__item:last-child {
             padding-bottom: 38px;
         }
         &__title {
             padding: 28px 0 40px 0;
             margin-bottom: 43px;
-        }
-        @media (max-width:1000px) {
-            width: calc(1/2*100% - (1 - 1/2)*20px);
+            @media (max-width:768px) {
+                padding-bottom: 0;
+                margin-bottom: 37px;
+            }
+            @media (max-width:1000px) {
+                padding: 0;
+            }
         }
     }
     &__item {
         margin-bottom: 37px;
         padding: 42px 40px 28px 41px;
         border-radius: 8px;
+        @media (max-width:1000px) {
+            margin-bottom: 20px;
+        }
+        @media (max-width: 768px) {
+            padding: 14px 10px;
+        }
+        @media (max-width:1000px) {
+            margin-bottom: 10px;
+        }
         &--01 {
             background-color: $reviews1;
             .reviews__text {
                 font-size: 17px;
+                @media (max-width: 768px) {
+                    font-size: 14px;
+                }
+                @media (max-width: 412px) {
+                    font-size: 12px;
+                }
             }
         }
         &--02 {
             background-color: $reviews2;
             .reviews__text {
                 font-size: 18px;
+                @media (max-width: 768px) {
+                    font-size: 14px;
+                }
+                @media (max-width: 412px) {
+                    font-size: 12px;
+                }
             }
         }
         &--03{
@@ -399,15 +665,21 @@ header {
             background-color: $reviews5;
             .reviews__text {
                 font-size: 18px;
+                @media (max-width: 768px) {
+                    font-size: 14px;
+                }
+                @media (max-width: 412px) {
+                    font-size: 12px;
+                }
             }
         }
         &__header {
             display: flex;
             align-items: flex-start;
             margin-bottom: 36px;
-        }
-        @media (max-width:1000px) {
-            margin-bottom: 20px;
+            @media (max-width: 768px) {
+                margin-bottom: 15px;
+            }
         }
     }
     &__avatar {
@@ -444,37 +716,85 @@ header {
         @media (max-width:1000px) {
             font-size: 16px;
         }
+        @media (max-width: 768px) {
+            font-size: 14px;
+            line-height: 25px;
+        }
+        @media (max-width: 412px) {
+            font-size: 12px;
+        }
     }
     &__post {
         font-weight: 700;
         margin-top: 34px;
+        @media (max-width: 768px) {
+            margin-top: 15px;
+        }
     }
 }
 
 .footer {
     background-color: $footerBg;
     padding: 55px 10px 57px 10px;
+    @media (max-width:1000px) {
+        padding-bottom: 25px;
+    }
+    @media (max-width:768px) {
+        padding-top: 20px;
+        padding-bottom: 15px;
+    }
     &__wrap {
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
-        // margin: 0 -65px;
+        @media (max-width:450px) {
+            flex-wrap: wrap;
+        }
     }
     &__item {
-        // flex: 1 1 25%;
-        // padding: 0 65px;
         width: calc(1/4*100% - (1 - 1/4)*130px);
         color: $grey;
         @media (max-width:1000px) {
             width: calc(1/4*100% - (1 - 1/4)*65px);
         }
+        @media (max-width:600px) {
+            width: calc(1/4*100% - (1 - 1/4)*25px);
+        }
+        @media (max-width:450px) {
+            width: calc(1/2*100% - (1 - 1/2)*25px);
+            margin-bottom: 10px;
+            &:nth-of-type(1) {
+                order:2;
+            }
+            &:nth-of-type(2) {
+                order:1;
+            }
+            &:nth-of-type(3) {
+                order:3;
+            }
+            &:nth-of-type(4) {
+                order:4;
+            }
+        }
     }
     &__logo {
         margin-bottom: 24px;
+        @media (max-width:450px) {
+            margin-bottom: 13px;
+        }
     }
     &__text {
         margin-bottom: 24px;
         line-height: 30px;
+        @media (max-width:768px) {
+            line-height: 20px;
+        }
+        @media (max-width:768px) {
+            font-size: 12px;
+        }
+        @media (max-width:450px) {
+            margin-bottom: 12px;
+        }
     }
     &__social {
         &__link {
@@ -490,6 +810,9 @@ header {
             &:last-child {
                 margin-right: 0;
             }
+            @media (max-width:650px) {
+                margin-right: 5px;
+            }
         }
         &.hover &__link:hover {
             filter: opacity(.5);
@@ -499,6 +822,12 @@ header {
         list-style: none;
         font-size: 15px;
         padding-left: 4px;
+        @media (max-width:768px) {
+            font-size: 14px;
+        }
+        @media (max-width:600px) {
+            font-size: 12px;
+        }
         &__item {
             margin-bottom: 13px;
             &:first-child {
@@ -510,11 +839,21 @@ header {
             &:last-child {
                 margin-bottom: 0;
             }
+            @media (max-width:768px) {
+                &:first-child {
+                    font-size: 14px;
+                }
+            }
+            @media (max-width:600px) {
+                &:first-child {
+                    font-size: 12px;
+                }
+            }
+            @media (max-width:450px) {
+                margin-bottom: 8px;
+            }
         }
         &.hover &__link:hover {
             text-decoration: underline;        }
-    }
-    @media (max-width:1000px) {
-        padding-bottom: 25px;
     }
 }
